@@ -1,7 +1,7 @@
 import { currentProfile } from "@/lib/current-profile";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
-import { ChannelType } from "@prisma/client";
+// import { ChannelType } from "@prisma/client";
 import { ServerHeader } from "./server-header";
 interface ServerSidebarProps {
   serverId: string;
@@ -34,19 +34,19 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
     },
   });
 
-  const textChannels = server?.channels.filter(
-    (channel) => channel.type === ChannelType.TEXT
-  );
-  const audioChannels = server?.channels.filter(
-    (channel) => channel.type === ChannelType.AUDIO
-  );
-  const videoChannels = server?.channels.filter(
-    (channel) => channel.type === ChannelType.VIDEO
-  );
+  // const textChannels = server?.channels.filter(
+  //   (channel) => channel.type === ChannelType.TEXT
+  // );
+  // const audioChannels = server?.channels.filter(
+  //   (channel) => channel.type === ChannelType.AUDIO
+  // );
+  // const videoChannels = server?.channels.filter(
+  //   (channel) => channel.type === ChannelType.VIDEO
+  // );
 
-  const members = server?.members.filter(
-    (member) => member.profileId !== profile.id
-  );
+  // const members = server?.members.filter(
+  //   (member) => member.profileId !== profile.id
+  // );
 
   if (!server) {
     return redirect("/");
